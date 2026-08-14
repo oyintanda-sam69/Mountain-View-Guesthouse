@@ -1,0 +1,137 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact / Enquire | Mountain View Guesthouse and Lodge</title>
+  <meta name="description" content="Send a booking enquiry to Mountain View Guesthouse and Lodge, Somerset East, or find our contact details and location.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Mountain View Guesthouse and Lodge logo">
+        <span class="brand-text">Mountain View<br>Guesthouse &amp; Lodge</span>
+      </a>
+
+      
+      <nav class="main-nav" id="primary-navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="accommodation.html">Accommodation</a></li>
+          <li><a href="things-to-do.html">Things to Do</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" aria-current="page">Contact / Enquire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact / Enquire</h1>
+        <p>Send us your dates &mdash; we reply directly, with no booking-platform commission</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card-grid">
+
+        <!-- Enquiry form. Handled client-side for this static demo by
+             script.js; on the live site this posts to a PHP script or a
+             service such as Formspree, per the technical requirements. -->
+        <div>
+          <h2>Send an Enquiry</h2>
+          <form id="enquiry-form" novalidate>
+
+            <div class="form-field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-field">
+              <label for="room-type">Room Type</label>
+              <select id="room-type" name="room-type">
+                <option value="standard">Standard Double Room</option>
+                <option value="mountain-view">Mountain View Room</option>
+                <option value="family">Family Room</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="dates">Preferred Dates</label>
+              <input type="text" id="dates" name="dates" placeholder="e.g. 12 &ndash; 14 September 2026">
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Enquiry</button>
+            <p id="form-status" class="form-status" role="status"></p>
+          </form>
+        </div>
+
+        <!-- Contact details and location information. -->
+        <div>
+          <h2>Find Us</h2>
+          <ul class="info-list">
+            <li>Mountain View Guesthouse and Lodge, Somerset East (KwaNojoli), Eastern Cape</li>
+            <li>On the N10, between Gqeberha (Port Elizabeth) and Graaff-Reinet</li>
+            <li>Tel: 042 000 0000</li>
+            <li>Email: stay@mountainviewsomerseteast.co.za</li>
+          </ul>
+
+          <h2 class="mt-2">Office Hours</h2>
+          <ul class="info-list">
+            <li>Monday &ndash; Friday: 07:00 &ndash; 19:00</li>
+            <li>Saturday &ndash; Sunday: 08:00 &ndash; 18:00</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h2>Mountain View Guesthouse &amp; Lodge</h2>
+        <p>Somerset East (KwaNojoli), Eastern Cape, South Africa. A comfortable, authentic Karoo stopover at the foot of Boschberg Mountain.</p>
+      </div>
+
+      
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>Somerset East, Eastern Cape</li>
+          <li>Tel: 042 000 0000</li>
+          <li>Email: stay@mountainviewsomerseteast.co.za</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer-bottom">&copy; 2026 Mountain View Guesthouse and Lodge. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
