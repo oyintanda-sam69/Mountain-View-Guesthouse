@@ -5,88 +5,175 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Things to Do | Mountain View Guesthouse and Lodge</title>
   <meta name="description" content="Local activities and attractions near Mountain View Guesthouse and Lodge, Somerset East, including the Boschberg hiking trail and trout fishing.">
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="../assets/images/Mountainview-Guesthouse-Western-Cape.webp" type="image/webp">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ===================== SITE HEADER / PRIMARY NAVIGATION ===================== -->
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Mountain View Guesthouse and Lodge logo">
-        <span class="brand-text">Mountain View<br>Guesthouse &amp; Lodge</span>
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/Mountainview-Guesthouse-Western-Cape.webp" alt="Mountain View Guesthouse and Lodge logo" width="46" height="46">
+        <span class="brand-text">Mountain View<small>Guesthouse &amp; Lodge</small></span>
       </a>
 
-      
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation menu">☰</button>
 
-       <nav class="main-nav" id="primary-navigation" aria-label="Primary">
+      <nav class="main-nav" id="primary-navigation" aria-label="Primary">
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html" aria-current="page">About Us</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="accommodation.html">Accommodation</a></li>
-          <li><a href="things-to-do.html">Things to Do</a></li>
+          <li><a href="things-to-do.html" aria-current="page">Things to Do</a></li>
           <li><a href="contact.html">Contact / Enquire</a></li>
         </ul>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
-    <section class="page-hero">
-      <div class="container">
-        <h1>Things to Do</h1>
-        <p>Hiking, fly-fishing, birdwatching and the heritage of Somerset East</p>
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="hero hero-page" aria-label="Things to do introduction">
+      <div class="hero-media">
+        <img
+          src="../assets/images/0000000000000000000mou-1-cropped-1024x657.jpg" width="50%" height="50%"
+          alt="View across the Karoo landscape toward the Boschberg mountains">
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Things to Do</p>
+        <h1>Explore Somerset East &amp; the Boschberg</h1>
+        <p class="lede">From mountain trails to heritage towns &mdash; a full Karoo experience awaits</p>
       </div>
     </section>
 
+    <!-- ===================== CATEGORY TABS ===================== -->
+    <nav class="tabs" aria-label="Filter activities by category">
+      <div class="container" role="tablist">
+        <button type="button" class="tab-btn" data-filter="all" role="tab" aria-selected="true">All Activities</button>
+        <button type="button" class="tab-btn" data-filter="outdoors" role="tab" aria-selected="false">Outdoors &amp; Adventure</button>
+        <button type="button" class="tab-btn" data-filter="culture" role="tab" aria-selected="false">Culture &amp; Heritage</button>
+        <button type="button" class="tab-btn" data-filter="leisure" role="tab" aria-selected="false">Leisure &amp; Relaxation</button>
+      </div>
+    </nav>
+
+    <!-- ===================== ACTIVITY CARDS ===================== -->
     <section class="section">
       <div class="container">
-        <div class="card-grid card-grid--3">
+        <div class="activity-grid">
 
-          <article class="card">
-            <div class="card-body">
-              <span class="tag">Hiking</span>
-              <h3>The Boschberg Trail</h3>
-              <p>A well-known local hiking trail right on our doorstep, with rewarding views back over Somerset East and the surrounding Karoo plains.</p>
+          <!-- Outdoors & Adventure -->
+          <article class="activity-card" data-category="outdoors">
+            <figure>
+              <img src="../assets/images/img_4091eb6265d.webp" alt="Hikers walking a mountain trail with backpacks" loading="lazy">
+            </figure>
+            <div class="activity-body">
+              <span class="activity-tag">Outdoors &amp; Adventure</span>
+              <h3>Boschberg Hiking Trails</h3>
+              <p class="activity-meta"><span>⏱ 3&ndash;8 hours</span><span>◆ Moderate&ndash;Challenging</span></p>
+              <p>The Boschberg range rises directly behind the guesthouse to over 1 800 m. Several well-marked trails depart from the mountain edge, from easy morning walks to full-day ridge traverses with sweeping views of the Karoo plain.</p>
+              <p class="activity-tip">💡 We can arrange a packed lunch and drop-off at the trailhead.</p>
             </div>
           </article>
 
-          <article class="card">
-            <div class="card-body">
-              <span class="tag">Fly-Fishing</span>
-              <h3>Trout Waters</h3>
-              <p>The district is known for its trout fishing &mdash; ask us for directions and permit information for nearby waters.</p>
+          <article class="activity-card" data-category="outdoors">
+            <figure>
+              <img src="../assets/images/OIP.webp" alt="A cool stream running through Karoo foothills, popular for fly-fishing" loading="lazy">
+            </figure>
+            <div class="activity-body">
+              <span class="activity-tag">Outdoors &amp; Adventure</span>
+              <h3>Fly-Fishing the Karoo Waters</h3>
+              <p class="activity-meta"><span>⏱ Half or full day</span><span>◆ All skill levels</span></p>
+              <p>The Somerset East district is home to some of the finest trout fishing in the Eastern Cape. Cool-water streams on the Boschberg foothills hold healthy wild and stocked brown trout throughout the season.</p>
+              <p class="activity-tip">💡 We can put you in touch with local guides who know every pool.</p>
             </div>
           </article>
 
-          <article class="card">
-            <div class="card-body">
-              <span class="tag">Nature</span>
+          <article class="activity-card" data-category="outdoors">
+            <figure>
+              <img src="../assets/images/OIP (1).webp" alt="Garden view from the guesthouse, popular with local birdlife" loading="lazy">
+            </figure>
+            <div class="activity-body">
+              <span class="activity-tag">Outdoors &amp; Adventure</span>
               <h3>Birdwatching</h3>
-              <p>The Boschberg foothills and farmland surrounding the guesthouse are a rewarding spot for local and migratory bird species.</p>
+              <p class="activity-meta"><span>⏱ Any duration</span><span>◆ Easy&ndash;Moderate</span></p>
+              <p>The Boschberg and surrounding Karoo scrub hold over 200 recorded species. Raptors &mdash; Black Eagle, Lanner Falcon, Jackal Buzzard &mdash; are frequently seen above the crags. Dawn birding from the guesthouse garden is particularly rewarding.</p>
+              <p class="activity-tip">💡 We keep a resident bird list and can lend binoculars.</p>
             </div>
           </article>
 
-          <article class="card">
-            <div class="card-body">
-              <span class="tag">Heritage</span>
-              <h3>Somerset East Village</h3>
-              <p>Explore the town's Cape Dutch and Victorian architecture, the historic Dutch Reformed Church, and small local shops and cafés.</p>
+          <article class="activity-card" data-category="outdoors">
+            <figure>
+              <img src="../assets/images/361223_6926_XXL.jpg" alt="Dirt road winding through Karoo foothills, suitable for mountain biking" loading="lazy">
+            </figure>
+            <div class="activity-body">
+              <span class="activity-tag">Outdoors &amp; Adventure</span>
+              <h3>Mountain Biking the Foothills</h3>
+              <p class="activity-meta"><span>⏱ 2&ndash;5 hours</span><span>◆ Moderate</span></p>
+              <p>The dirt roads and 4x4 tracks that wind around the base of Boschberg offer excellent mountain biking on rolling terrain. Several routes loop back to the guesthouse, making logistics simple.</p>
+              <p class="activity-tip">💡 Bike hire can be arranged locally with 24 hours&rsquo; notice.</p>
             </div>
           </article>
 
-          <article class="card">
-            <div class="card-body">
-              <span class="tag">Day Trips</span>
-              <h3>Mountain Zebra National Park</h3>
-              <p>A scenic drive from Somerset East, offering game viewing and further hiking within the wider Karoo region.</p>
+          <!-- Culture & Heritage -->
+          <article class="activity-card" data-category="culture">
+            <figure>
+              <img src="../assets/images/OIP (2).webp" alt="Historic Cape Dutch and Victorian streetscape of Somerset East" loading="lazy">
+            </figure>
+            <div class="activity-body">
+              <span class="activity-tag">Culture &amp; Heritage</span>
+              <h3>Somerset East Heritage Tour</h3>
+              <p class="activity-meta"><span>⏱ 2&ndash;3 hours</span><span>◆ Easy</span></p>
+              <p>Somerset East (KwaNojoli) is one of the Eastern Cape&rsquo;s most significant heritage towns. The Walter Battiss Art Museum, the old Victorian streetscapes, and the Dutch Reformed Mother Church all tell the story of a town that has shaped South African art and agriculture.</p>
+              <p class="activity-tip">💡 The Walter Battiss Museum is 10 minutes&rsquo; walk from the guesthouse.</p>
             </div>
           </article>
 
-          <article class="card">
-            <div class="card-body">
-              <span class="tag">Relaxation</span>
-              <h3>Farm &amp; Garden Walks</h3>
-              <p>Simply enjoy a slow walk around the guesthouse grounds, with mountain views and fresh Karoo air.</p>
+          <article class="activity-card" data-category="culture">
+            <figure>
+              <img src="../assets/images/companyImage1.jpg" alt="Scenic country road through the Blue Crane Route farmland" loading="lazy">
+            </figure>
+            <div class="activity-body">
+              <span class="activity-tag">Culture &amp; Heritage</span>
+              <h3>Blue Crane Route Drive</h3>
+              <p class="activity-meta"><span>⏱ Full day</span><span>◆ Easy (self-drive)</span></p>
+              <p>The Blue Crane Route winds through some of the Eastern Cape&rsquo;s most scenic country, connecting historic towns, game farms and mountain passes. Somerset East is the eastern anchor of the route, making Mountain View the ideal base.</p>
+              <p class="activity-tip">💡 We can suggest a curated day loop with lunch stops.</p>
+            </div>
+          </article>
+
+          <!-- Leisure & Relaxation -->
+          <article class="activity-card" data-category="leisure">
+            <figure>
+              <img src="../assets/images/20180606-Restaurant-14.jpg" alt="A plated farm-style dinner at a local Somerset East restaurant" loading="lazy">
+            </figure>
+            <div class="activity-body">
+              <span class="activity-tag">Leisure &amp; Relaxation</span>
+              <h3>Farm-Fresh Dining in Town</h3>
+              <p class="activity-meta"><span>⏱ Lunch or dinner</span><span>◆ Easy</span></p>
+              <p>Somerset East has a small but growing food scene built on the region&rsquo;s produce. Several local restaurants and farm stalls serve Karoo lamb, free-range chicken, and seasonal vegetables within minutes of the guesthouse.</p>
+              <p class="activity-tip">💡 Ask us for tonight&rsquo;s recommendation &mdash; it changes seasonally.</p>
+            </div>
+          </article>
+
+          <article class="activity-card" data-category="leisure">
+            <figure>
+              <img src="../assets/images/1_JS180051576.avif" alt="Starry night sky over the mountains, ideal for stargazing" loading="lazy">
+            </figure>
+            <div class="activity-body">
+              <span class="activity-tag">Leisure &amp; Relaxation</span>
+              <h3>Stargazing on the Stoep</h3>
+              <p class="activity-meta"><span>⏱ Evening</span><span>◆ Easy</span></p>
+              <p>Somerset East has minimal light pollution. On clear nights the Milky Way is fully visible from the guesthouse stoep. We set out chairs and a flask of Karoo rooibos &mdash; you bring the wonder.</p>
+              <p class="activity-tip">💡 Best from 21:00 during new-moon phases. Ask us to check the forecast.</p>
             </div>
           </article>
 
@@ -94,37 +181,51 @@
       </div>
     </section>
 
-    <section class="section section-alt text-center">
+    <!-- ===================== CALL TO ACTION ===================== -->
+    <section class="section section-cta">
       <div class="container">
-        <h2>Plan Your Stay</h2>
-        <p>Ask our team for personal recommendations and directions when you arrive &mdash; we know the area best.</p>
-        <a class="btn" href="contact.html">Ask Us a Question</a>
+        <h2>Need Help Planning Your Stay?</h2>
+        <p>We know every trail, guide and hidden spot in the district. Get in touch and we&rsquo;ll build you an itinerary.</p>
+        <a class="btn btn-gold mt-2" href="contact.html">Contact Us</a>
       </div>
     </section>
 
   </main>
 
+  <!-- ===================== SITE FOOTER ===================== -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <h2>Mountain View Guesthouse &amp; Lodge</h2>
-        <p>Somerset East (KwaNojoli), Eastern Cape, South Africa. A comfortable, authentic Karoo stopover at the foot of Boschberg Mountain.</p>
+        <p>A comfortable, authentic Karoo stopover at the foot of Boschberg Mountain. Family-owned and run since 2011.</p>
       </div>
 
-     
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="accommodation.html">Accommodation</a></li>
+          <li><a href="things-to-do.html">Things to Do</a></li>
+          <li><a href="contact.html">Contact / Enquire</a></li>
+        </ul>
+      </div>
+
       <div>
         <h3>Contact</h3>
-        <ul>
-          <li>Somerset East, Eastern Cape</li>
-          <li>Tel: 042 000 0000</li>
-          <li>Email: stay@mountainviewsomerseteast.co.za</li>
-        </ul>
+        <address style="font-style:normal;">
+          <ul>
+            <li>Somerset East (KwaNojoli), Eastern Cape</li>
+            <li><a href="tel:0420000000">042 000 0000</a></li>
+            <li><a href="mailto:stay@mountainviewsomerseteast.co.za">stay@mountainviewsomerseteast.co.za</a></li>
+          </ul>
+        </address>
       </div>
     </div>
 
     <p class="footer-bottom">&copy; 2026 Mountain View Guesthouse and Lodge. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="../assets/js/script.js"></script>
 </body>
 </html>
