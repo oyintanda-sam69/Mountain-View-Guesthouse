@@ -1,16 +1,30 @@
-<!DOCTYPE html>
+<!DOCT<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accommodation | Mountain View Guesthouse and Lodge</title>
-  <meta name="description" content="Room types, rates and house policies at Mountain View Guesthouse and Lodge, Somerset East.">
+  <title>Rooms &amp; Rates | Mountain View Guesthouse, Somerset East</title>
+  <meta name="description" content="Compare four room types from R950 a night, see photos, rates and house policies, then ask for an instant quote for your Somerset East stay.">
+  <meta name="keywords" content="Somerset East accommodation, guesthouse rooms and rates, family suite Eastern Cape, garden cottage self-catering, B&amp;B Boschberg">
+  <meta name="author" content="Mountain View Guesthouse and Lodge">
+  <meta name="theme-color" content="#2b2318">
+  <link rel="canonical" href="https://YOUR-SITE.netlify.app/pages/accommodation.html">
+
+  <!-- Open Graph / social sharing preview (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mountain View Guesthouse and Lodge">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Rooms &amp; Rates | Mountain View Guesthouse, Somerset East">
+  <meta property="og:description" content="Compare four room types from R950 a night, see photos, rates and house policies, then ask for an instant quote for your Somerset East stay.">
+  <meta property="og:url" content="https://YOUR-SITE.netlify.app/pages/accommodation.html">
+  <meta property="og:image" content="https://YOUR-SITE.netlify.app/assets/images/boschberg-mountain-range-somerset-east.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="../assets/images/Mountainview-Guesthouse-Western-Cape.webp" type="image/webp">
+  <link rel="icon" href="../assets/images/mountain-view-logo.webp" type="image/webp">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -33,7 +47,8 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="accommodation.html" aria-current="page">Accommodation</a></li>
           <li><a href="things-to-do.html">Things to Do</a></li>
-          <li><a href="contact.html">Contact / Enquire</a></li>
+          <li><a href="enquiry.html">Enquire</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -44,9 +59,9 @@
     <!-- ===================== PAGE HERO ===================== -->
     <section class="hero hero-page" aria-label="Accommodation introduction">
       <div class="hero-media">
-        <img
-          src="../assets/images/executive-room-king-size.jpg" width="50%" height="50%"
-          alt="A warmly lit guest bedroom with a dark wooden headboard">
+        <img width="1800" height="1000"
+          src="../assets/images/executive-room-king-size.jpg"
+          alt="A warmly lit guest bedroom with a dark wooden headboard" fetchpriority="high">
       </div>
       <div class="hero-content">
         <p class="eyebrow">Accommodation</p>
@@ -68,7 +83,9 @@
         <article class="room">
           <div class="room-media">
             <span class="room-badge">Comfortable and classic</span>
-            <img src="../assets/images/10.jpg" alt="Standard Double Room with a neutral-toned queen bed" loading="lazy">
+            <button type="button" class="zoom-trigger" data-lightbox="rooms" data-full="../assets/images/standard-double-room.jpg" data-caption="Standard Double Room" aria-label="View a larger photo of the Standard Double Room">
+              <img width="940" height="788" src="../assets/images/10.jpg" alt="Standard Double Room with a neutral-toned queen bed and mounted TV" loading="lazy">
+            </button>
           </div>
           <div class="room-body">
             <h3>Standard Double Room</h3>
@@ -83,7 +100,7 @@
               <li>Tea &amp; coffee station</li>
               <li>Air conditioning</li>
             </ul>
-            <a class="btn btn-green" href="contact.html">Enquire About This Room &rarr;</a>
+            <a class="btn btn-green" href="enquiry.html?room=standard">Get a Quote for This Room &rarr;</a>
           </div>
         </article>
 
@@ -91,7 +108,9 @@
         <article class="room">
           <div class="room-media">
             <span class="room-badge">Woke up facing Boschberg</span>
-            <img src="../assets/images/16b85e662.webp" alt="Superior Mountain-View Room with a king bed and dark headboard" loading="lazy">
+            <button type="button" class="zoom-trigger" data-lightbox="rooms" data-full="../assets/images/superior-mountain-view-room.webp" data-caption="Superior Mountain-View Room" aria-label="View a larger photo of the Superior Mountain-View Room">
+              <img width="940" height="376" src="../assets/images/16b85e662.webp" alt="Superior Mountain-View Room with a king bed, red headboard and floral wall mural" loading="lazy">
+            </button>
           </div>
           <div class="room-body">
             <h3>Superior Mountain-View Room</h3>
@@ -106,7 +125,7 @@
               <li>En-suite bath &amp; shower</li>
               <li>DSTV</li>
             </ul>
-            <a class="btn btn-green" href="contact.html">Enquire About This Room &rarr;</a>
+            <a class="btn btn-green" href="enquiry.html?room=mountain-view">Get a Quote for This Room &rarr;</a>
           </div>
         </article>
 
@@ -114,7 +133,9 @@
         <article class="room">
           <div class="room-media">
             <span class="room-badge">Space for everyone</span>
-            <img src="../assets/images/Two-Queen-Accessible--3-.jpg" alt="Family Suite bedroom with two interconnected rooms" loading="lazy">
+            <button type="button" class="zoom-trigger" data-lightbox="rooms" data-full="../assets/images/family-suite-two-beds.jpg" data-caption="Family Suite" aria-label="View a larger photo of the Family Suite">
+              <img width="2025" height="1350" src="../assets/images/Two-Queen-Accessible--3-.jpg" alt="Family Suite bedroom with two beds and a timber headboard" loading="lazy">
+            </button>
           </div>
           <div class="room-body">
             <h3>Family Suite</h3>
@@ -130,7 +151,7 @@
               <li>Seating area</li>
               <li>Free Wi-Fi</li>
             </ul>
-            <a class="btn btn-green" href="contact.html">Enquire About This Room &rarr;</a>
+            <a class="btn btn-green" href="enquiry.html?room=family">Get a Quote for This Room &rarr;</a>
           </div>
         </article>
 
@@ -138,7 +159,9 @@
         <article class="room">
           <div class="room-media">
             <span class="room-badge">Self-contained Karoo retreat</span>
-            <img src="../assets/images/hottentots-mountain-view-guest-house.jpg" alt="Garden Cottage bedroom with a botanical wall mural" loading="lazy">
+            <button type="button" class="zoom-trigger" data-lightbox="rooms" data-full="../assets/images/garden-cottage-bedroom.webp" data-caption="Garden Cottage" aria-label="View a larger photo of the Garden Cottage">
+              <img width="480" height="384" src="../assets/images/hottentots-mountain-view-guest-house.jpg" alt="Garden Cottage bedroom with a botanical wall mural and yellow bed runner" loading="lazy">
+            </button>
           </div>
           <div class="room-body">
             <h3>Garden Cottage</h3>
@@ -154,7 +177,7 @@
               <li>Full kitchenette</li>
               <li>DSTV</li>
             </ul>
-            <a class="btn btn-green" href="contact.html">Enquire About This Room &rarr;</a>
+            <a class="btn btn-green" href="enquiry.html?room=cottage">Get a Quote for This Room &rarr;</a>
           </div>
         </article>
       </div>
@@ -248,12 +271,97 @@
       </div>
     </section>
 
+    <!-- ===================== FAQ ACCORDION =====================
+         Each question is a <button> that expands its answer. script.js (initAccordions) toggles
+         aria-expanded and an "is-open" class; the open/close animation is pure CSS. -->
+    <section class="section section-alt" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Good to Know</p>
+          <h2 id="faq-heading">Questions Guests Often Ask</h2>
+        </div>
+        <div class="accordion" data-accordion>
+        <div class="accordion-item">
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="faq-1-button" aria-expanded="false" aria-controls="faq-1-panel">
+              <span>What time can I check in and check out?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-1-panel" role="region" aria-labelledby="faq-1-button">
+            <div class="accordion-inner"><p>Check-in is from 14:00 to 20:00 and check-out is by 10:00. If you expect to arrive after 20:00, call us on 042 000 0000 before you travel so we can arrange it.</p></div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="faq-2-button" aria-expanded="false" aria-controls="faq-2-panel">
+              <span>Is breakfast included?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-2-panel" role="region" aria-labelledby="faq-2-button">
+            <div class="accordion-inner"><p>Yes. The Standard Double, Superior Mountain-View Room and Family Suite are bed and breakfast, with a cooked breakfast served from 07:00 to 09:00. The Garden Cottage is self-catering and has its own kitchenette and braai area.</p></div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="faq-3-button" aria-expanded="false" aria-controls="faq-3-panel">
+              <span>Can I bring children?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-3-panel" role="region" aria-labelledby="faq-3-button">
+            <div class="accordion-inner"><p>Children are welcome and cots are available on request. The Family Suite sleeps up to four guests across two interconnected rooms.</p></div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="faq-4-button" aria-expanded="false" aria-controls="faq-4-panel">
+              <span>Are pets allowed?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-4-panel" role="region" aria-labelledby="faq-4-button">
+            <div class="accordion-inner"><p>Sorry, pets are not permitted. Smoking is allowed in outdoor areas only.</p></div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="faq-5-button" aria-expanded="false" aria-controls="faq-5-panel">
+              <span>Can you help us plan hikes, fishing or lunches?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-5-panel" role="region" aria-labelledby="faq-5-button">
+            <div class="accordion-inner"><p>Yes. We can pack trail lunches, drop you at the trailhead and introduce you to local fly-fishing guides. Add these to your quote on the enquiry page, or see the Things to Do page for ideas.</p></div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="faq-6-button" aria-expanded="false" aria-controls="faq-6-panel">
+              <span>How quickly will you reply to an enquiry?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-6-panel" role="region" aria-labelledby="faq-6-button">
+            <div class="accordion-inner"><p>The enquiry page gives you an instant estimate and availability check. Our team confirms every enquiry personally within 24 hours.</p></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== CALL TO ACTION ===================== -->
     <section class="section section-dark text-center">
       <div class="container">
         <h2>Not Sure Which Room Is Right?</h2>
-        <p>Send us an enquiry and we&rsquo;ll help you find the perfect fit for your travel plans and budget.</p>
-        <a class="btn btn-gold mt-2" href="contact.html">Send an Enquiry</a>
+        <p>Tell us your dates and guests and we&rsquo;ll show you what&rsquo;s available and what it costs for your travel plans and budget.</p>
+        <a class="btn btn-gold mt-2" href="enquiry.html">Get an Instant Quote</a>
       </div>
     </section>
 
@@ -274,7 +382,8 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="accommodation.html">Accommodation</a></li>
           <li><a href="things-to-do.html">Things to Do</a></li>
-          <li><a href="contact.html">Contact / Enquire</a></li>
+          <li><a href="enquiry.html">Enquire</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 

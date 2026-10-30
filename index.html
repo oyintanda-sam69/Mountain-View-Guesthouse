@@ -3,16 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mountain View Guesthouse &amp; Lodge | Somerset East, Eastern Cape</title>
-  <meta name="description" content="A family-run Cape Dutch guesthouse at the foot of Boschberg Mountain in Somerset East, Eastern Cape. Nine comfortable rooms, hearty breakfasts, and warm Karoo hospitality.">
+  <title>Somerset East Guesthouse | Mountain View Guesthouse &amp; Lodge</title>
+  <meta name="description" content="Family-run Cape Dutch guesthouse at the foot of Boschberg Mountain in Somerset East. Nine en-suite rooms, cooked breakfast and an easy N10 stopover.">
+  <meta name="keywords" content="Somerset East guesthouse, Boschberg accommodation, Eastern Cape bed and breakfast, N10 stopover, Karoo guesthouse, Blue Crane Route">
+  <meta name="author" content="Mountain View Guesthouse and Lodge">
+  <meta name="theme-color" content="#2b2318">
+  <link rel="canonical" href="https://YOUR-SITE.netlify.app/">
+
+  <!-- Open Graph / social sharing preview (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mountain View Guesthouse and Lodge">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Somerset East Guesthouse | Mountain View Guesthouse &amp; Lodge">
+  <meta property="og:description" content="Family-run Cape Dutch guesthouse at the foot of Boschberg Mountain in Somerset East. Nine en-suite rooms, cooked breakfast and an easy N10 stopover.">
+  <meta property="og:url" content="https://YOUR-SITE.netlify.app/">
+  <meta property="og:image" content="https://YOUR-SITE.netlify.app/assets/images/boschberg-mountain-range-somerset-east.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Google Fonts: Playfair Display for headings, Lato for body copy -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="assets/images/Mountainview-Guesthouse-Western-Cape.webp" type="image/webp">
+  <link rel="icon" href="assets/images/mountain-view-logo.webp" type="image/webp">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Structured data (schema.org) so search engines can show the guesthouse's address, hours and price range -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Mountain View Guesthouse and Lodge",
+    "description": "Family-run Cape Dutch guesthouse at the foot of Boschberg Mountain in Somerset East, Eastern Cape.",
+    "url": "https://YOUR-SITE.netlify.app/",
+    "image": "https://YOUR-SITE.netlify.app/assets/images/boschberg-mountain-range-somerset-east.jpg",
+    "logo": "https://YOUR-SITE.netlify.app/assets/images/mountain-view-logo.webp",
+    "telephone": "+27420000000",
+    "email": "stay@mountainviewsomerseteast.co.za",
+    "priceRange": "R950 - R1800",
+    "checkinTime": "14:00",
+    "checkoutTime": "10:00",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "28 Nojoli Street",
+      "addressLocality": "Somerset East",
+      "addressRegion": "Eastern Cape",
+      "postalCode": "5850",
+      "addressCountry": "ZA"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": -32.7188, "longitude": 25.5848 },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Breakfast included", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Swimming pool", "value": true }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -34,7 +80,8 @@
           <li><a href="pages/about.html">About Us</a></li>
           <li><a href="pages/accommodation.html">Accommodation</a></li>
           <li><a href="pages/things-to-do.html">Things to Do</a></li>
-          <li><a href="pages/contact.html">Contact / Enquire</a></li>
+          <li><a href="pages/enquiry.html">Enquire</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -47,9 +94,9 @@
       <div class="hero-media">
         <!-- Responsive image: the browser picks the smallest file that still
              fills the viewport, per the srcset/sizes requirement. -->
-        <img
+        <img width="1024" height="657"
           src="assets/images/0000000000000000000mou-1-cropped-1024x657.jpg"
-          alt="Sunrise over the Boschberg mountain range near Somerset East">
+          alt="Green Boschberg mountain range above Somerset East under a clear blue sky" fetchpriority="high">
       </div>
       <div class="hero-content text-center">
         <p class="eyebrow">Somerset East &middot; Eastern Cape &middot; South Africa</p>
@@ -57,7 +104,7 @@
         <p class="lede">A family-run Cape Dutch guesthouse at the foot of Boschberg Mountain &mdash; authentic, unhurried, unforgettable.</p>
         <div class="btn-row" style="justify-content:center;">
           <a class="btn btn-green" href="pages/accommodation.html">View Rooms</a>
-          <a class="btn btn-outline-light" href="pages/contact.html">Make an Enquiry</a>
+          <a class="btn btn-outline-light" href="pages/enquiry.html">Get a Quote</a>
         </div>
       </div>
     </section>
@@ -72,6 +119,16 @@
       </div>
     </section>
 
+    <!-- Live "today" strip. script.js replaces this text with a greeting and the current
+         breakfast / check-in status (Africa/Johannesburg time). The wording below is the
+         fallback shown if JavaScript is switched off. -->
+    <section class="today-strip" aria-label="Today at the guesthouse">
+      <div class="container">
+        <p class="today-greeting" id="today-greeting">Welcome to Mountain View</p>
+        <p class="today-status" id="today-status">Breakfast is served daily from 07:00 to 09:00. Check-in is from 14:00 to 20:00.</p>
+      </div>
+    </section>
+
     <!-- ===================== OUR STORY ===================== -->
     <section class="section">
       <div class="container split">
@@ -83,11 +140,11 @@
           <a class="text-link" href="pages/about.html">Read Our Full Story &rarr;</a>
         </div>
         <div class="media-frame">
-          <img
-            src="assets/images/0000000000000000000mou2-cropped.jpg"
+          <img width="500" height="500"
+            src="assets/images/hottentots-mountain-view-guest-house.jpg"
             alt="The guesthouse pool and gardens with the Boschberg mountains beyond">
           <div class="stat-badge">
-            <strong>15+</strong>
+            <strong data-count-to="15" data-count-suffix="+">15+</strong>
             <span>Years of Hospitality</span>
           </div>
         </div>
@@ -142,10 +199,29 @@
       </div>
     </section>
 
+    <!-- ===================== WHEN TO VISIT (content loaded from assets/data/seasons.json) ===================== -->
+    <section class="section" aria-labelledby="month-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Plan Your Visit</p>
+          <h2 id="month-heading">What the Boschberg Is Like This Month</h2>
+          <p>Choose a month to see what to expect and what to do. We open on this month by default.</p>
+        </div>
+
+        <div class="month-picker" id="month-picker" role="group" aria-label="Choose a month"></div>
+
+        <article class="month-card" id="month-card" aria-live="polite">
+          <h3 id="month-title">Spring in the foothills</h3>
+          <p id="month-text">Mild days, green slopes and active birdlife make this a comfortable time for hiking, mountain biking and fly-fishing.</p>
+          <a class="text-link" id="month-link" href="pages/things-to-do.html">Browse things to do &rarr;</a>
+        </article>
+      </div>
+    </section>
+
     <!-- ===================== VISION QUOTE (full-bleed) ===================== -->
     <section class="section-quote">
       <div class="hero-media">
-        <img src="assets/images/hottentots-mountain-view-guest-house.jpg" alt="Guesthouse pool deck at dusk" loading="lazy">
+        <img width="600" height="399" src="assets/images/SE.avif" alt="Swimming pool and terraced garden at the guesthouse" loading="lazy">
       </div>
       <blockquote>
         <p>&ldquo;To be recognised as the leading small guesthouse in the Blue Crane District.&rdquo;</p>
@@ -209,7 +285,8 @@
           <li><a href="pages/about.html">About Us</a></li>
           <li><a href="pages/accommodation.html">Accommodation</a></li>
           <li><a href="pages/things-to-do.html">Things to Do</a></li>
-          <li><a href="pages/contact.html">Contact / Enquire</a></li>
+          <li><a href="pages/enquiry.html">Enquire</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
         </ul>
       </div>
 

@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Mountain View Guesthouse and Lodge</title>
-  <meta name="description" content="The story, mission and vision of Mountain View Guesthouse and Lodge, a family-run guesthouse in Somerset East, Eastern Cape.">
+  <title>Our Story | Mountain View Guesthouse, Somerset East</title>
+  <meta name="description" content="Meet the Botha family and read the fifteen-year story of Mountain View Guesthouse, a Cape Dutch farmhouse turned nine-room guesthouse in Somerset East.">
+  <meta name="keywords" content="Mountain View Guesthouse history, Botha family, Cape Dutch farmhouse, Somerset East guesthouse, Blue Crane Route hospitality">
+  <meta name="author" content="Mountain View Guesthouse and Lodge">
+  <meta name="theme-color" content="#2b2318">
+  <link rel="canonical" href="https://YOUR-SITE.netlify.app/pages/about.html">
+
+  <!-- Open Graph / social sharing preview (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mountain View Guesthouse and Lodge">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Our Story | Mountain View Guesthouse, Somerset East">
+  <meta property="og:description" content="Meet the Botha family and read the fifteen-year story of Mountain View Guesthouse, a Cape Dutch farmhouse turned nine-room guesthouse in Somerset East.">
+  <meta property="og:url" content="https://YOUR-SITE.netlify.app/pages/about.html">
+  <meta property="og:image" content="https://YOUR-SITE.netlify.app/assets/images/boschberg-mountain-range-somerset-east.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +47,8 @@
           <li><a href="about.html" aria-current="page">About Us</a></li>
           <li><a href="accommodation.html">Accommodation</a></li>
           <li><a href="things-to-do.html">Things to Do</a></li>
-          <li><a href="contact.html">Contact / Enquire</a></li>
+          <li><a href="enquiry.html">Enquire</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -44,9 +59,9 @@
     <!-- ===================== PAGE HERO ===================== -->
     <section class="hero hero-page" aria-label="About us introduction">
       <div class="hero-media">
-        <img
-          src="../assets/images/0000000000000000000mou-1-cropped-1024x657.jpg" width=""
-          alt="The Cape Dutch farmhouse frontage of Mountain View Guesthouse">
+        <img width="1024" height="657"
+          src="../assets/images/0000000000000000000mou-1-cropped-1024x657.jpg"
+          alt="Green Boschberg mountain range behind Somerset East" fetchpriority="high">
       </div>
       <div class="hero-content">
         <p class="eyebrow">About Us</p>
@@ -122,9 +137,9 @@
     <section class="section">
       <div class="container split">
         <div class="media-frame">
-          <img
+          <img width="600" height="399"
             src="../assets/images/hottentots-mountain-view-guest-house.jpg" 
-            alt="Guests relaxing on the guesthouse pool deck">
+            alt="Swimming pool and terraced garden at the guesthouse" loading="lazy">
         </div>
 
         <div>
@@ -136,8 +151,59 @@
             <li>Weekend getaway couples from Gqeberha and surrounding towns.</li>
             <li>Business travellers requiring overnight accommodation between the coast and the Karoo interior.</li>
           </ul>
-          <a class="btn btn-green mt-1" href="contact.html">Make a Booking Enquiry</a>
+          <a class="btn btn-green mt-1" href="enquiry.html">Get a Quote for Your Stay</a>
         </div>
+      </div>
+    </section>
+
+    <!-- ===================== PHOTO GALLERY + LIGHTBOX =====================
+         Each thumbnail is a real <button> so it works with keyboard and screen readers.
+         script.js builds the lightbox (initLightbox) from the data-lightbox / data-full /
+         data-caption attributes. -->
+    <section class="section section-alt" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Photo Gallery</p>
+          <h2 id="gallery-heading">A Look Around Mountain View</h2>
+          <p>Select a photo to see it larger, then use the arrow keys or swipe to move between pictures.</p>
+        </div>
+        <ul class="gallery-grid">
+          <li>
+            <button type="button" class="gallery-item" data-lightbox="gallery" data-full="../assets/images/guesthouse-pool-and-garden.jpg" data-caption="Swimming pool and lawn in front of the guesthouse">
+              <img src="../assets/images/0000000000000000000mou2-cropped.jpg" width="1219" height="670" alt="Swimming pool and lawn in front of the guesthouse" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-lightbox="gallery" data-full="../assets/images/cape-dutch-guesthouse-frontage.jpg" data-caption="Gravel courtyard and green-roofed guesthouse building under shade trees">
+              <img src="../assets/images/0000000000000000000mou2-cropped.jpg" width="650" height="450" alt="Gravel courtyard and green-roofed guesthouse building under shade trees" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-lightbox="gallery" data-full="../assets/images/dining-room-timber-beams.jpg" data-caption="Dining room with exposed timber roof beams">
+              <img src="../assets/images/20180606-Restaurant-14.jpg" width="1024" height="683" alt="Dining room with exposed timber roof beams" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-lightbox="gallery" data-full="../assets/images/garden-braai-area.avif" data-caption="Garden braai area with picnic tables and mountain views">
+              <img src="../assets/images/SE.avif" width="800" height="533" alt="Garden braai area with picnic tables and mountain views" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-lightbox="gallery" data-full="../assets/images/guest-room-orange-armchairs.jpg" data-caption="Guest room with a king bed and orange armchairs">
+              <img src="../assets/images/hottentots-mountain-view-guest-house (1).jpg" width="600" height="400" alt="Guest room with a king bed and orange armchairs" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-lightbox="gallery" data-full="../assets/images/twin-room-garden-doors.jpg" data-caption="Twin room with glass doors opening onto the garden">
+              <img src="../assets/images/Two-Queen-Accessible--3-.jpg" width="600" height="391" alt="Twin room with glass doors opening onto the garden" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-lightbox="gallery" data-full="../assets/images/blue-crane-route-valley.jpg" data-caption="Green farming valley of the Blue Crane Route seen from above">
+              <img src="../assets/images/companyImage1.jpg" width="1140" height="400" alt="Green farming valley of the Blue Crane Route seen from above" loading="lazy">
+            </button>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -158,7 +224,8 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="accommodation.html">Accommodation</a></li>
           <li><a href="things-to-do.html">Things to Do</a></li>
-          <li><a href="contact.html">Contact / Enquire</a></li>
+          <li><a href="enquiry.html">Enquire</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 

@@ -3,14 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Things to Do | Mountain View Guesthouse and Lodge</title>
-  <meta name="description" content="Local activities and attractions near Mountain View Guesthouse and Lodge, Somerset East, including the Boschberg hiking trail and trout fishing.">
+  <title>Things to Do in Somerset East | Hiking, Fishing, Birding</title>
+  <meta name="description" content="Search hiking, fly-fishing, birdwatching, mountain biking and heritage activities around Somerset East and the Boschberg, all close to Mountain View.">
+  <meta name="keywords" content="things to do Somerset East, Boschberg hiking trails, fly-fishing Eastern Cape, birdwatching Karoo, mountain biking Somerset East">
+  <meta name="author" content="Mountain View Guesthouse and Lodge">
+  <meta name="theme-color" content="#2b2318">
+  <link rel="canonical" href="https://YOUR-SITE.netlify.app/pages/things-to-do.html">
+
+  <!-- Open Graph / social sharing preview (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mountain View Guesthouse and Lodge">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Things to Do in Somerset East | Hiking, Fishing, Birding">
+  <meta property="og:description" content="Search hiking, fly-fishing, birdwatching, mountain biking and heritage activities around Somerset East and the Boschberg, all close to Mountain View.">
+  <meta property="og:url" content="https://YOUR-SITE.netlify.app/pages/things-to-do.html">
+  <meta property="og:image" content="https://YOUR-SITE.netlify.app/assets/images/boschberg-mountain-range-somerset-east.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="../assets/images/Mountainview-Guesthouse-Western-Cape.webp" type="image/webp">
+  <link rel="icon" href="../assets/images/mountain-view-logo.webp" type="image/webp">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -33,7 +47,8 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="accommodation.html">Accommodation</a></li>
           <li><a href="things-to-do.html" aria-current="page">Things to Do</a></li>
-          <li><a href="contact.html">Contact / Enquire</a></li>
+          <li><a href="enquiry.html">Enquire</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -44,9 +59,9 @@
     <!-- ===================== PAGE HERO ===================== -->
     <section class="hero hero-page" aria-label="Things to do introduction">
       <div class="hero-media">
-        <img
-          src="../assets/images/0000000000000000000mou-1-cropped-1024x657.jpg" width="50%" height="50%"
-          alt="View across the Karoo landscape toward the Boschberg mountains">
+        <img width="1024" height="657"
+          src="../assets/images/0000000000000000000mou-1-cropped-1024x657.jpg"
+          alt="View across the Karoo landscape toward the Boschberg mountains" fetchpriority="high">
       </div>
       <div class="hero-content">
         <p class="eyebrow">Things to Do</p>
@@ -57,23 +72,47 @@
 
     <!-- ===================== CATEGORY TABS ===================== -->
     <nav class="tabs" aria-label="Filter activities by category">
-      <div class="container" role="tablist">
-        <button type="button" class="tab-btn" data-filter="all" role="tab" aria-selected="true">All Activities</button>
-        <button type="button" class="tab-btn" data-filter="outdoors" role="tab" aria-selected="false">Outdoors &amp; Adventure</button>
-        <button type="button" class="tab-btn" data-filter="culture" role="tab" aria-selected="false">Culture &amp; Heritage</button>
-        <button type="button" class="tab-btn" data-filter="leisure" role="tab" aria-selected="false">Leisure &amp; Relaxation</button>
+      <div class="container">
+        <button type="button" class="tab-btn" data-filter="all" aria-pressed="true">All Activities</button>
+        <button type="button" class="tab-btn" data-filter="outdoors" aria-pressed="false">Outdoors &amp; Adventure</button>
+        <button type="button" class="tab-btn" data-filter="culture" aria-pressed="false">Culture &amp; Heritage</button>
+        <button type="button" class="tab-btn" data-filter="leisure" aria-pressed="false">Leisure &amp; Relaxation</button>
       </div>
     </nav>
 
     <!-- ===================== ACTIVITY CARDS ===================== -->
     <section class="section">
       <div class="container">
-        <div class="activity-grid">
+        <!-- Search + sort toolbar (script.js: initActivityFilter). Works together with the category tabs above. -->
+        <div class="filter-bar">
+          <div class="filter-field filter-search">
+            <label for="activity-search">Search activities</label>
+            <input type="search" id="activity-search" name="q" placeholder="Try hike, trout, birds or stars" autocomplete="off" maxlength="40">
+          </div>
+          <div class="filter-field filter-sort">
+            <label for="activity-sort">Sort by</label>
+            <select id="activity-sort" name="sort">
+              <option value="featured">Our order</option>
+              <option value="az">Name, A to Z</option>
+              <option value="shortest">Shortest first</option>
+              <option value="longest">Longest first</option>
+            </select>
+          </div>
+          <p class="result-count" id="result-count" role="status" aria-live="polite">Showing all 8 activities</p>
+        </div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No activities match your search</h3>
+          <p>Try a shorter word such as &ldquo;hike&rdquo; or &ldquo;bird&rdquo;, or choose All Activities.</p>
+          <button type="button" class="btn btn-green" id="reset-filters">Clear search and filters</button>
+        </div>
+
+        <div class="activity-grid" id="activity-grid">
 
           <!-- Outdoors & Adventure -->
-          <article class="activity-card" data-category="outdoors">
+          <article class="activity-card" data-category="outdoors" data-hours="5">
             <figure>
-              <img src="../assets/images/img_4091eb6265d.webp" alt="Hikers walking a mountain trail with backpacks" loading="lazy">
+              <img width="641" height="360" src="../assets/images/img_4091eb6265d.webp" alt="Three hikers in hats looking across a green mountain valley" loading="lazy">
             </figure>
             <div class="activity-body">
               <span class="activity-tag">Outdoors &amp; Adventure</span>
@@ -81,12 +120,13 @@
               <p class="activity-meta"><span>⏱ 3&ndash;8 hours</span><span>◆ Moderate&ndash;Challenging</span></p>
               <p>The Boschberg range rises directly behind the guesthouse to over 1 800 m. Several well-marked trails depart from the mountain edge, from easy morning walks to full-day ridge traverses with sweeping views of the Karoo plain.</p>
               <p class="activity-tip">💡 We can arrange a packed lunch and drop-off at the trailhead.</p>
+              <a class="text-link activity-link" href="enquiry.html?extras=packed-lunch,trailhead-drop">Add this to a quote &rarr;</a>
             </div>
           </article>
 
-          <article class="activity-card" data-category="outdoors">
+          <article class="activity-card" data-category="outdoors" data-hours="5">
             <figure>
-              <img src="../assets/images/OIP.webp" alt="A cool stream running through Karoo foothills, popular for fly-fishing" loading="lazy">
+              <img width="474" height="355" src="../assets/images/OIP.webp" alt="Two people on a rocky outcrop beside calm Karoo water" loading="lazy">
             </figure>
             <div class="activity-body">
               <span class="activity-tag">Outdoors &amp; Adventure</span>
@@ -94,12 +134,13 @@
               <p class="activity-meta"><span>⏱ Half or full day</span><span>◆ All skill levels</span></p>
               <p>The Somerset East district is home to some of the finest trout fishing in the Eastern Cape. Cool-water streams on the Boschberg foothills hold healthy wild and stocked brown trout throughout the season.</p>
               <p class="activity-tip">💡 We can put you in touch with local guides who know every pool.</p>
+              <a class="text-link activity-link" href="enquiry.html?extras=fishing-guide">Add this to a quote &rarr;</a>
             </div>
           </article>
 
-          <article class="activity-card" data-category="outdoors">
+          <article class="activity-card" data-category="outdoors" data-hours="2">
             <figure>
-              <img src="../assets/images/OIP (1).webp" alt="Garden view from the guesthouse, popular with local birdlife" loading="lazy">
+              <img width="474" height="316" src="../assets/images/OIP (1).webp" alt="Birdwatcher with binoculars watching a raptor over open grassland" loading="lazy">
             </figure>
             <div class="activity-body">
               <span class="activity-tag">Outdoors &amp; Adventure</span>
@@ -110,9 +151,9 @@
             </div>
           </article>
 
-          <article class="activity-card" data-category="outdoors">
+          <article class="activity-card" data-category="outdoors" data-hours="3">
             <figure>
-              <img src="../assets/images/361223_6926_XXL.jpg" alt="Dirt road winding through Karoo foothills, suitable for mountain biking" loading="lazy">
+              <img width="1200" height="799" src="../assets/images/361223_6926_XXL.jpg" alt="Mountain biker riding a rocky trail in the Boschberg foothills" loading="lazy">
             </figure>
             <div class="activity-body">
               <span class="activity-tag">Outdoors &amp; Adventure</span>
@@ -124,9 +165,9 @@
           </article>
 
           <!-- Culture & Heritage -->
-          <article class="activity-card" data-category="culture">
+          <article class="activity-card" data-category="culture" data-hours="2.5">
             <figure>
-              <img src="../assets/images/OIP (2).webp" alt="Historic Cape Dutch and Victorian streetscape of Somerset East" loading="lazy">
+              <img width="474" height="316" src="../assets/images/OIP (2).webp" alt="White church with a tall spire in Somerset East" loading="lazy">
             </figure>
             <div class="activity-body">
               <span class="activity-tag">Culture &amp; Heritage</span>
@@ -137,9 +178,9 @@
             </div>
           </article>
 
-          <article class="activity-card" data-category="culture">
+          <article class="activity-card" data-category="culture" data-hours="8">
             <figure>
-              <img src="../assets/images/companyImage1.jpg" alt="Scenic country road through the Blue Crane Route farmland" loading="lazy">
+              <img width="1140" height="400" src="../assets/images/companyImage1.jpg" alt="Aerial view of a green farming valley beneath the mountains" loading="lazy">
             </figure>
             <div class="activity-body">
               <span class="activity-tag">Culture &amp; Heritage</span>
@@ -151,9 +192,9 @@
           </article>
 
           <!-- Leisure & Relaxation -->
-          <article class="activity-card" data-category="leisure">
+          <article class="activity-card" data-category="leisure" data-hours="1.5">
             <figure>
-              <img src="../assets/images/20180606-Restaurant-14.jpg" alt="A plated farm-style dinner at a local Somerset East restaurant" loading="lazy">
+              <img width="1024" height="683" src="../assets/images/20180606-Restaurant-14.jpg" alt="Dining room with exposed timber beams and tables laid for guests" loading="lazy">
             </figure>
             <div class="activity-body">
               <span class="activity-tag">Leisure &amp; Relaxation</span>
@@ -164,9 +205,9 @@
             </div>
           </article>
 
-          <article class="activity-card" data-category="leisure">
+          <article class="activity-card" data-category="leisure" data-hours="2">
             <figure>
-              <img src="../assets/images/1_JS180051576.avif" alt="Starry night sky over the mountains, ideal for stargazing" loading="lazy">
+              <img width="615" height="409" src="../assets/images/1_JS180051576.avif" alt="Starry night sky above a dark hill" loading="lazy">
             </figure>
             <div class="activity-body">
               <span class="activity-tag">Leisure &amp; Relaxation</span>
@@ -207,7 +248,8 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="accommodation.html">Accommodation</a></li>
           <li><a href="things-to-do.html">Things to Do</a></li>
-          <li><a href="contact.html">Contact / Enquire</a></li>
+          <li><a href="enquiry.html">Enquire</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 

@@ -3,134 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact / Enquire | Mountain View Guesthouse and Lodge</title>
-  <meta name="description" content="Send a booking enquiry to Mountain View Guesthouse and Lodge, Somerset East, or find our contact details and location.">
-  <link rel="stylesheet" href="styles.css">
+  <title>Contact Us | Mountain View Guesthouse, Somerset East</title>
+  <meta name="description" content="Send Mountain View Guesthouse a message, find 28 Nojoli Street on the map, and see our phone number, email address and office hours.">
+  <meta name="keywords" content="contact Mountain View Guesthouse, Somerset East guesthouse phone, 28 Nojoli Street, Somerset East directions">
+  <meta name="author" content="Mountain View Guesthouse and Lodge">
+  <meta name="theme-color" content="#2b2318">
+  <link rel="canonical" href="https://YOUR-SITE.netlify.app/pages/contact.html">
+
+  <!-- Open Graph / social sharing preview (off-page SEO) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mountain View Guesthouse and Lodge">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Contact Us | Mountain View Guesthouse, Somerset East">
+  <meta property="og:description" content="Send Mountain View Guesthouse a message, find 28 Nojoli Street on the map, and see our phone number, email address and office hours.">
+  <meta property="og:url" content="https://YOUR-SITE.netlify.app/pages/contact.html">
+  <meta property="og:image" content="https://YOUR-SITE.netlify.app/assets/images/boschberg-mountain-range-somerset-east.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="../assets/images/mountain-view-logo.webp" type="image/webp">
+  <link rel="stylesheet" href="../assets/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ===================== SITE HEADER / PRIMARY NAVIGATION ===================== -->
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Mountain View Guesthouse and Lodge logo">
-        <span class="brand-text">Mountain View<br>Guesthouse &amp; Lodge</span>
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/Mountainview-Guesthouse-Western-Cape.webp" alt="Mountain View Guesthouse and Lodge logo" width="46" height="46">
+        <span class="brand-text">Mountain View<small>Guesthouse &amp; Lodge</small></span>
       </a>
 
-      
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation menu">☰</button>
+
       <nav class="main-nav" id="primary-navigation" aria-label="Primary">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" aria-current="page">About Us</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="accommodation.html">Accommodation</a></li>
-          <li><a href="things to do.html">Things to Do</a></li>
-          <li><a href="contact.html">Contact / Enquire</a></li>
+          <li><a href="things-to-do.html">Things to Do</a></li>
+          <li><a href="enquiry.html" aria-current="page">Enquire</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
-    <section class="page-hero">
-      <div class="container">
-        <h1>Contact / Enquire</h1>
-        <p>Send us your dates &mdash; we reply directly, with no booking-platform commission</p>
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="hero hero-page" aria-label="Contact introduction">
+      <div class="hero-media">
+        <img width="1219" height="670" src="../assets/images/1_JS180051576.avif" alt="Swimming pool and lawn in front of the guesthouse" fetchpriority="high">
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Get in Touch</p>
+        <h1>Contact Mountain View Guesthouse</h1>
+        <p class="lede">Questions, feedback or a group booking? Send us a message and we&rsquo;ll reply within 24 hours</p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container card-grid">
-
-        <!-- Enquiry form. Handled client-side for this static demo by
-             script.js; on the live site this posts to a PHP script or a
-             service such as Formspree, per the technical requirements. -->
+    <!-- Right column: general message form.
+             The action attribute is the address the message is sent to. With JavaScript on, script.js
+             validates the form, compiles the message into an email and lets the guest send it to that
+             address; with JavaScript off the browser uses this action directly. -->
         <div>
-          <h2>Send an Enquiry</h2>
-          <form id="enquiry-form" novalidate>
+          <p class="eyebrow">General Message</p>
+          <h2>Send Us a Message</h2>
+          <p>Tell us a little about yourself and what you&rsquo;d like to say. Fields marked * are required.</p>
 
-            <div class="form-field">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" required>
+          <form id="contact-form" class="mt-1" action="mailto:stay@mountainviewsomerseteast.co.za" method="post" enctype="text/plain" novalidate data-recipient="stay@mountainviewsomerseteast.co.za">
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="c-name">Full name *</label>
+                <input type="text" id="c-name" name="name" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="c-name-error">
+                <p class="field-error" id="c-name-error" hidden></p>
+              </div>
+              <div class="form-field">
+                <label for="c-email">Email address *</label>
+                <input type="email" id="c-email" name="email" autocomplete="email" required maxlength="100" placeholder="you@example.com" aria-describedby="c-email-error">
+                <p class="field-error" id="c-email-error" hidden></p>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="c-phone">Phone number</label>
+                <input type="tel" id="c-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="e.g. 042 000 0000" aria-describedby="c-phone-hint c-phone-error">
+                <p class="field-hint" id="c-phone-hint">Optional. South African numbers only, such as 082 123 4567 or +27 82 123 4567.</p>
+                <p class="field-error" id="c-phone-error" hidden></p>
+              </div>
+              <div class="form-field">
+                <label for="c-type">Type of message *</label>
+                <select id="c-type" name="message-type" required aria-describedby="c-type-error">
+                  <option value="">Select a message type&hellip;</option>
+                  <option value="General question">General question</option>
+                  <option value="Change to an existing booking">Change to an existing booking</option>
+                  <option value="Group or event booking">Group or event booking</option>
+                  <option value="Feedback or compliment">Feedback or compliment</option>
+                  <option value="Media or partnership">Media or partnership</option>
+                </select>
+                <p class="field-error" id="c-type-error" hidden></p>
+              </div>
             </div>
 
             <div class="form-field">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required>
+              <label for="c-subject">Subject *</label>
+              <input type="text" id="c-subject" name="subject" required minlength="5" maxlength="80" aria-describedby="c-subject-error">
+              <p class="field-error" id="c-subject-error" hidden></p>
             </div>
 
             <div class="form-field">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone">
+              <label for="c-message">Your message *</label>
+              <textarea id="c-message" name="message" rows="6" required minlength="20" maxlength="1000" aria-describedby="c-message-count c-message-error"></textarea>
+              <p class="field-hint char-count" id="c-message-count">0 of 1000 characters (minimum 20)</p>
+              <p class="field-error" id="c-message-error" hidden></p>
             </div>
 
-            <div class="form-field">
-              <label for="room-type">Room Type</label>
-              <select id="room-type" name="room-type">
-                <option value="standard">Standard Double Room</option>
-                <option value="mountain-view">Mountain View Room</option>
-                <option value="family">Family Room</option>
-                <option value="not-sure">Not sure yet</option>
-              </select>
+            <fieldset class="form-field choice-group">
+              <legend>How should we reply?</legend>
+              <label class="choice"><input type="radio" name="reply" value="Email" checked> <span>By email</span></label>
+              <label class="choice"><input type="radio" name="reply" value="Phone"> <span>By phone</span></label>
+            </fieldset>
+
+            <!-- Honeypot: hidden from people, but bots fill it in. script.js ignores any submission where it has a value. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="c-website">Leave this field empty</label>
+              <input type="text" id="c-website" name="website" tabindex="-1" autocomplete="off">
             </div>
 
-            <div class="form-field">
-              <label for="dates">Preferred Dates</label>
-              <input type="text" id="dates" name="dates" placeholder="e.g. 12 &ndash; 14 September 2026">
-            </div>
-
-            <div class="form-field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="btn">Send Enquiry</button>
-            <p id="form-status" class="form-status" role="status"></p>
+            <button type="submit" class="btn btn-green" style="width:100%;">Prepare my email</button>
+            <p id="contact-status" class="form-status text-center" role="status" aria-live="polite"></p>
           </form>
-        </div>
 
-        <!-- Contact details and location information. -->
-        <div>
-          <h2>Find Us</h2>
-          <ul class="info-list">
-            <li>Mountain View Guesthouse and Lodge, Somerset East (KwaNojoli), Eastern Cape</li>
-            <li>On the N10, between Gqeberha (Port Elizabeth) and Graaff-Reinet</li>
-            <li>Tel: 042 000 0000</li>
-            <li>Email: stay@mountainviewsomerseteast.co.za</li>
-          </ul>
-
-          <h2 class="mt-2">Office Hours</h2>
-          <ul class="info-list">
-            <li>Monday &ndash; Friday: 07:00 &ndash; 19:00</li>
-            <li>Saturday &ndash; Sunday: 08:00 &ndash; 18:00</li>
-          </ul>
+          <!-- Shown after the form validates: the compiled email, ready to send to the recipient above -->
+          <div class="email-preview" id="email-preview" hidden tabindex="-1">
+            <h3>Your email is ready</h3>
+            <p>Check the details below, then open the email in your email app and press Send. Nothing is sent until you do.</p>
+            <dl class="email-fields">
+              <div><dt>To</dt><dd id="preview-to"></dd></div>
+              <div><dt>Subject</dt><dd id="preview-subject"></dd></div>
+              <div><dt>Message</dt><dd id="preview-body" class="preview-body"></dd></div>
+            </dl>
+            <div class="btn-row">
+              <a class="btn btn-green" id="mailto-link" href="mailto:stay@mountainviewsomerseteast.co.za">Open in my email app</a>
+              <button type="button" class="btn btn-outline-green" id="copy-email">Copy email text</button>
+              <button type="button" class="btn btn-link" id="edit-message">Edit my message</button>
+            </div>
+            <p class="form-status" id="copy-status" role="status" aria-live="polite"></p>
+          </div>
         </div>
 
       </div>
     </section>
 
   </main>
-
+  <!-- ===================== SITE FOOTER ===================== -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <h2>Mountain View Guesthouse &amp; Lodge</h2>
-        <p>Somerset East (KwaNojoli), Eastern Cape, South Africa. A comfortable, authentic Karoo stopover at the foot of Boschberg Mountain.</p>
+        <p>A comfortable, authentic Karoo stopover at the foot of Boschberg Mountain. Family-owned and run since 2011.</p>
       </div>
 
-      
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="accommodation.html">Accommodation</a></li>
+          <li><a href="things-to-do.html">Things to Do</a></li>
+          <li><a href="enquiry.html">Enquire</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
       <div>
         <h3>Contact</h3>
-        <ul>
-          <li>Somerset East, Eastern Cape</li>
-          <li>Tel: 042 000 0000</li>
-          <li>Email: stay@mountainviewsomerseteast.co.za</li>
-        </ul>
+        <address style="font-style:normal;">
+          <ul>
+            <li>Somerset East (KwaNojoli), Eastern Cape</li>
+            <li><a href="tel:0420000000">042 000 0000</a></li>
+            <li><a href="mailto:stay@mountainviewsomerseteast.co.za">stay@mountainviewsomerseteast.co.za</a></li>
+          </ul>
+        </address>
       </div>
     </div>
 
     <p class="footer-bottom">&copy; 2026 Mountain View Guesthouse and Lodge. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
-</body>
-</html> 
+  <script src="../assets/vendor/leaflet/leaflet.js"></script>
+  <script src="../assets/js/script.js"></script>
+
